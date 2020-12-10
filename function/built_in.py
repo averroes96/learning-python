@@ -194,3 +194,36 @@ def getMyLangsString(lang1, lang2):
 result = reduce(getMyLangsString, langs)
 
 print(result)
+
+print("=" * 48)
+
+
+## enumerate(iterable, start=0): assign enumeration to the iterable obejct
+
+print("> enumerate:")
+
+result = enumerate(langs,1)
+
+for counter, lang in result:
+    print(f"{counter} => {lang}")
+
+print("=" * 48)
+
+## help(funct)
+
+print("> help:")
+
+#help()
+
+print("=" * 48)
+
+
+## reversed(iterable)
+
+print("> reversed:")
+
+name = reversed("adda meceffeuk")
+
+for l in name:
+    print(l, end="")
+
