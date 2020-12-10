@@ -130,3 +130,67 @@ print("> slice:")
 
 print(numbers[slice(3)])
 print(numbers[slice(3,10)])
+
+print("=" * 48)
+
+
+## map(function, iterable)
+
+print("> map:")
+
+def setCapital(text):
+    return text.strip().lower().capitalize()
+
+langs = [ "JaVa", "PyThon", "pHp", "c"]
+
+langsCaps = map(setCapital, langs)
+
+for lang in langsCaps:
+    print(f"- {lang}")
+
+print("=" * 48)
+
+### With a lambda function:
+
+for lang in list(map( lambda text: text.strip().lower().capitalize(), langs)):
+    print(f"- {lang}")
+
+print("=" * 48)
+
+
+## filter(function, iterable): function must return a boolean value
+
+print("> filter:")
+
+numbers = [ 0, 3, 15, 7, 8, 0, 12]
+
+def filterNumbers(num):
+    return num != 0
+
+result = filter(filterNumbers, numbers)
+
+for number in result:
+    print(number)
+
+print("=" * 48)
+
+langs = [ "Java", "Python", "JavaScript", "PHP", "C++"]
+
+for lang in list(filter(lambda lng : lng.lower().startswith("j"), langs)):
+    print(lang)
+
+print("=" * 48)
+
+
+## reduce(function, iterable): function take 2 args(elements) from the iterable
+
+from functools import reduce
+
+print("> reduce:")
+
+def getMyLangsString(lang1, lang2):
+    return lang1 + "_" + lang2
+
+result = reduce(getMyLangsString, langs)
+
+print(result)
