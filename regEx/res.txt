@@ -1,0 +1,2 @@
+Python Regex Cheatsheet: https://www.debuggex.com/cheatsheet/regex/python
+pythex: https://pythex.org/

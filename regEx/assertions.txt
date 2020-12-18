@@ -1,0 +1,11 @@
+^	Start of string
+\A	Start of string, ignores m flag
+$	End of string
+\Z	End of string, ignores m flag
+\b	Word boundary
+\B	Non-word boundary
+(?=...)	Positive lookahead
+(?!...)	Negative lookahead
+(?<=...)	Positive lookbehind
+(?<!...)	Negative lookbehind
+(?()|)	Conditional
