@@ -10,14 +10,14 @@ class Member:
     def __init__(this, firstName, lastName, gender) -> None: # Self refer to the current instance of the class
         super().__init__()
         
-        if(firstName.lower() in Member.notAllowedNames or lastName.lower() in Member.notAllowedNames):
+        if not Member.isAllowed(firstName.lower()):
             raise ValueError("This name is not allowed")
 
         this.name = firstName # Instance attribute
         this.last = lastName # Instance attribute
         this.gender = gender.lower() # Instance attribute
 
-    def getFullName(this):
+    def getFullName(this): # Instant method
         return f"{this.name.lower().capitalize()} {this.last.lower().capitalize()}"
 
     def sayHello(this):
@@ -27,6 +27,17 @@ class Member:
             return f"Hello Miss {this.name.lower().capitalize()}"
         else:
             return f"Hello freak {this.name.lower().capitalize()}"
+
+    @classmethod
+    def isAllowed(cls, name): # Class method preceded by @classmethod
+        if name in cls.notAllowedNames:
+            return False
+        else:
+            return True
+
+    @staticmethod
+    def doSomething(): # Static metho, can accept zero parameter
+        print("I'm just a static method!")
 
 ada = Member("Ada", "Meceffeuk", "MALE")
 randa = Member("Randa", "Meceffeuk", "FemaLe")
@@ -42,4 +53,6 @@ print("=" * 48)
 print(ada.sayHello())
 print(randa.sayHello())
 print(justin.sayHello())
+
+Member.doSomething()
 
